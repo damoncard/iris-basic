@@ -5,15 +5,29 @@
 		<meta name="author" content="Sirawat Ngramphandisorn">
 
 		<title>Authentication</title>
+
+		<link rel="stylesheet" href="/static/css/front.css" type="text/css">
+		<script>
+			function register() {
+				window.location = "/register"
+			}
+		</script>
 	</head>
 	<body>
 		<form id="submiting" action="/login"  method="POST">
-			<h2>Please sign in</h2>
-			<label>Username</label>
-			<input type="text" name="username" placeholder="Username" required autofocus>
-			<label>Password</label>
-			<input type="password" name="password" placeholder="Password" required>
-			<button type="submit">Sign in</button>
+			<h2 class="header">Welcome to our system</h2>
+			<div class="box">
+				<div class="top-box">
+					<label>Username:</label>
+					<input type="text" name="username" placeholder="Username" required>
+				</div>
+				<div class="bottom-box">
+					<label>Password:</label>
+					<input type="password" name="password" placeholder="Password" required>
+				</div>
+				<button class="button" type="submit">OK</button>
+				<button type="button" onclick="register()">Register</button>
+			</div>
 		</form>
 	</body>
 </html>

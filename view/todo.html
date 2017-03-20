@@ -13,7 +13,7 @@
 		<h2 class="center">TO-DO list</h2>
 		<h4>Please read carefully: Task must be complete on time! Your task will be lost when delete data.json file. For saving the tasks online, please use database</h4>
 		{{range .Datas}}
-			{{if .Admin }}
+			{{if .Admin}}
 			<form class="submiting" action="/add" method="POST">
 				<label>Task</label>
 				<input type="text" name="title" placeholder="Title" required>
@@ -35,17 +35,27 @@
 				<td>Date</td>
 				<td>Done</td>
 			</tr>
-			{{range .Tks}}
-			<tr>
-				<td><u onclick="editRow({{.Name}})">{{.Name}}</u></td>
-				<td>{{.Date}}</td>
-				<td class="header">{{.Done}}</td>
-				<td class="header">
-					<form action="/delete" method="POST">
-						<button class="delete" name="delete" value={{.Name}}>X</button>
-					</form>
-				</td>
-			</tr>
+			{{if .Admin}}
+				{{range .Tks}}
+				<tr>
+					<td><u onclick="editRow({{.Name}})">{{.Name}}</u></td>
+					<td>{{.Date}}</td>
+					<td class="header">{{.Done}}</td>
+					<td class="header">
+						<form action="/delete" method="POST">
+							<button class="delete" name="delete" value={{.Name}}>X</button>
+						</form>
+					</td>
+				</tr>
+				{{end}}
+			{{else}}
+				{{range .Tks}}
+				<tr>
+					<td><u>{{.Name}}</u></td>
+					<td>{{.Date}}</td>
+					<td class="header">{{.Done}}</td>
+				</tr>
+				{{end}}
 			{{end}}
 		</table>
 		{{end}}
