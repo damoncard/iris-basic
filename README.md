@@ -36,8 +36,8 @@ First meet with iris framework with Todo List CRUD.
 
 * [Golang v.1.8](https://github.com/golang/go)
 * [Iris framework](https://github.com/kataras/iris)
-* [Bootstrap](https://github.com/twbs/bootstrap)
-* [BoltDB](https://github.com/boltdb/bolt)
+* ~~[Bootstrap](https://github.com/twbs/bootstrap)~~
+* ~~[BoltDB](https://github.com/boltdb/bolt)~~
 
 ## Setup
 
