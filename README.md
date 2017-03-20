@@ -1,8 +1,8 @@
-# Todo CRUD #
+# Todo CRUD
 
 First meet with iris framework with Todo List CRUD.
 
-## Scope ##
+## Scope
 
 * Create Todo List Application
 	* The **todo** page should display:
@@ -32,34 +32,23 @@ First meet with iris framework with Todo List CRUD.
 		* **Admin** for CRUD function
 		* **Guest** for R function
 
-### Technologies ###
+## Technologies
 
-* Golang v.1.8
+* [Golang v.1.8](https://github.com/golang/go)
+* [Iris framework](https://github.com/kataras/iris)
+* [Bootstrap](https://github.com/twbs/bootstrap)
+* [BoltDB](https://github.com/boltdb/bolt)
 
-	Github: https://github.com/golang/go
+## Setup
 
-* Iris framework
-
-	Github: https://github.com/kataras/iris
-
-* Bootstrap
-	
-	Github: https://github.com/twbs/bootstrap
-
-* BoltDB
-
-	Github: https://github.com/boltdb/bolt
-
-### Setup ###
-
-1. ~~Create Repo~~
-2. ~~Setup project on ubuntu (VMware)~~
+1. Create Repo
+2. Setup project on ubuntu (VMware)
 3. Download and Install
 	1. ~~Go v.1.8~~
 	2. ~~Iris framework~~
 	3. Bootstrap
 	4. BoltDB
-4. ~~Initialize project with iris framework~~
+4. Initialize project with iris framework
 5. Use **httprouter** adapter for routing
 5. Use **view.HTML** to set template
 6. Use **sessioin** for authentication
