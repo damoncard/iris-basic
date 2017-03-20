@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="author" content="Sirawat Ngramphandisorn">
+
+		<title>Diary</title>
+
+		<link rel="stylesheet" href="/static/css/style.css" type="text/css">
+		<script type="text/javascript" src="/static/js/script.js"></script>
+	</head>
+	<body>
+		<h2 class="center">TO-DO list</h2>
+		<h4>Please read carefully: Task must be complete on time! Your task will be lost when delete data.json file. For saving the tasks online, please use database</h4>
+		{{range .Datas}}
+			{{if .Admin }}
+			<form class="submiting" action="/add" method="POST">
+				<label>Task</label>
+				<input type="text" name="title" placeholder="Title" required>
+				<label>Date</label>
+				<input type="date" name="date" placeholder="Date" min="2020-01-01" required>
+				<label>Status</label>
+				<select name="status">
+					<option value="No">No</option>
+					<option value="Yes">Yes</option>
+				</select>
+				<button type="submit">Add</button>
+			</form>
+			{{end}}
+			<h5> Completed Tasks: {{ .Ctask }} Uncompleted Tasks: {{ .Uctask }} </h5>
+			<button type="submit" onclick="logout()">Sign Out</button>
+		<table id="todo-list" class="todo-list" border="1">
+			<tr class="header">
+				<td>Task</td>
+				<td>Date</td>
+				<td>Done</td>
+			</tr>
+			{{range .Tks}}
+			<tr>
+				<td><u onclick="editRow({{.Name}})">{{.Name}}</u></td>
+				<td>{{.Date}}</td>
+				<td class="header">{{.Done}}</td>
+				<td class="header">
+					<form action="/delete" method="POST">
+						<button class="delete" name="delete" value={{.Name}}>X</button>
+					</form>
+				</td>
+			</tr>
+			{{end}}
+		</table>
+		{{end}}
+	<body>
+</html>

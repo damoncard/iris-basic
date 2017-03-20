@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="author" content="Sirawat Ngramphandisorn">
+
+		<title>Modify Task</title>
+
+		<script>
+			function cancelEdit() {
+				window.location = "/forum/admin"
+			}
+		</script>
+	</head>
+	<body>
+		<form id="editing" action="/edit" method="POST">
+		{{range .Tasks}}
+			<h2>Editing Task</h2>
+			<label>Name</label>
+			<input type="text" name="title" value={{.Name}} placeholder={{.Name}} required>
+			<label>Date</label>
+			<input type="text" name="date" value={{.Date}} placeholder={{.Date}} required>
+			<label>Done</label>
+			<select name="status">
+				<option value="Yes">Yes</option>
+				<option value="No">No</option>
+			</select>
+			<button type="submit">OK</button>
+			<button type="button" onclick="cancelEdit()">Cancel</button>	
+			<button type="reset">Reset</button>
+		{{end}}	
+		</form>
+	</body>
+</html>
