@@ -44,8 +44,8 @@ First meet with iris framework with Todo List CRUD.
 1. Create Repo
 2. Setup project on ubuntu (VMware)
 3. Download and Install
-	1. ~~Go v.1.8~~
-	2. ~~Iris framework~~
+	1. Go v.1.8
+	2. Iris framework
 	3. Bootstrap
 	4. BoltDB
 4. Initialize project with iris framework
