@@ -1,0 +1,28 @@
+.center {
+	margin-left:  380px;
+}
+.delete {
+	width: 100%;
+}
+.todo-list {
+	margin-left: 90px;
+	margin-top: 20px;
+	border-spacing: 5px;
+	width: 40%; 
+	background-color: #FFFF88;
+}
+.header {
+	text-align: center;
+}
+.submiting {
+	margin-left: 190px;
+}
+h5 {
+	padding-right: 15px;
+	margin-left: 240px;
+	font-size: 20px;
+	display: inline-block;
+}
+td {
+	padding: 15px;
+}
