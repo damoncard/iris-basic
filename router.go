@@ -12,7 +12,7 @@ func main() {
 	app := iris.New()
 	app.Adapt(
 		httprouter.New(),
-		view.HTML("./view", ".html"),
+		view.HTML("./view", ".html").Reload(true),
 		sessions.New(sessions.Config{Cookie: "yummy"}),
 	)
 	app.StaticWeb("/static", "./assets")
