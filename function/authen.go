@@ -7,7 +7,7 @@ import (
 func Login(ctx *iris.Context) {
 	session := ctx.Session()
  
-	user, level := Check(ctx.PostValue("username"), ctx.PostValue("password"))
+	user, level := CheckUser(ctx.PostValue("username"), ctx.PostValue("password"))
 
 	if user {
 		session.Set("authenticated", true)

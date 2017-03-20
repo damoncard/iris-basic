@@ -21,6 +21,15 @@ func main() {
 		ctx.Render("index.html", nil)
 	})
 
+	app.Get("/register", func(ctx *iris.Context) {
+		ctx.Render("register.html", nil)
+	})
+
+	app.Post("/register", func(ctx *iris.Context) {
+		function.AddUser(ctx.PostValue("username"), ctx.PostValue("password"))
+		ctx.Redirect("/")
+	})
+	
 	app.Post("/login", function.Login)
 	app.Get("/logout", function.Logout)
 

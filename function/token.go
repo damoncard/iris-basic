@@ -13,7 +13,21 @@ type Token struct {
 	Admin string	`json:"admin"`
 }
 
-func Check(a, b string) (bool, string) {
+func AddUser(a, b string) {
+	users := getUserJSON()
+	lower_a := strings.ToLower(a)
+
+	t := Token{
+		User: lower_a,
+		Pass: b,
+		Admin: "no",
+	}
+
+	users = append(users, t)
+	writeUserJSON(users)
+}
+
+func CheckUser(a, b string) (bool, string) {
 	users := getUserJSON()
 	var t string
 	lower_a := strings.ToLower(a)
