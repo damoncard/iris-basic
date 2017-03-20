@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="author" content="Sirawat Ngramphandisorn">
+
+		<title>Authentication</title>
+
+		<link rel="stylesheet" href="/static/css/front.css" type="text/css">
+		<script>
+			function cancelRegis() {
+				window.location = "/"
+			}
+		</script>
+	</head>
+	<body>
+		<form id="submiting" action="/register"  method="POST">
+			<h2 class="regis">Register forum</h2>
+			<div class="box">
+				<div class="top-box">
+					<label>Username:</label>
+					<input type="text" name="username" placeholder="Username" pattern=".{5,}"  title="Require at least 5 characters" required>
+				</div>
+				<div class="bottom-box">
+				<label>Password:</label>
+				<input type="password" name="password" placeholder="Password" pattern=".{5,10}" title="Require at least 5 up to 10 characters" required>
+				</div>
+				<button class="button" type="submit">OK</button>
+				<button type="button" onclick="cancelRegis()">Cancel</button>
+			</div>
+		</form>
+	</body>
+</html>
